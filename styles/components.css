@@ -1,0 +1,1106 @@
+/* ============================================================
+   ReferenceSync — компоненты
+   Каждый блок соответствует файлу из docs/design/components/.
+   Состояния: enable / hovered / pressed / disable, где они есть
+   в исходном дизайне.
+   ============================================================ */
+
+/* ============================================================
+   Switch — docs/design/components/switch.css
+   36×18. Слои: Rectangle 613 (обод) → 614 (паз) →
+   615 (заливка паза) → Frame 1751 (ручка с двумя половинами).
+   ============================================================ */
+.rs-switch {
+  position: relative;
+  flex: none;
+  width: var(--w-switch);
+  height: var(--h-switch);
+  background: var(--switch-track-off);
+  box-shadow: var(--switch-track-shadow-off);
+  border-radius: 9.2px;
+  cursor: pointer;
+  transition: background 140ms ease, box-shadow 140ms ease;
+}
+
+/* Rectangle 614 — тёмный паз */
+.rs-switch::before {
+  content: '';
+  position: absolute;
+  left: 11.11%;
+  right: 11.11%;
+  top: 22.22%;
+  bottom: 22.22%;
+  background: var(--switch-slot);
+  border-radius: 5.4px;
+}
+
+/* Rectangle 615 — светящаяся заливка паза */
+.rs-switch::after {
+  content: '';
+  position: absolute;
+  left: 13.89%;
+  right: 13.89%;
+  top: 27.78%;
+  bottom: 27.78%;
+  background: var(--switch-fill-off);
+  box-shadow: inset 0px -0.8px 0.8px #06050A;
+  border-radius: 5.4px;
+  transition: background 140ms ease;
+}
+
+/* Frame 1751 — ручка */
+.rs-switch__knob {
+  position: absolute;
+  top: 11.11%;
+  bottom: 11.11%;
+  left: 5.56%;
+  width: 63.88%;             /* right: 30.56% в положении Off */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1px;
+  gap: 1px;
+  background: var(--switch-knob);
+  box-shadow: inset 0px 0.6px 0.8px rgba(49, 53, 65, 0.6);
+  border-radius: 20px;
+  z-index: 1;
+  transition: left 160ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ellipse 4 / Ellipse 5 — насечки на ручке */
+.rs-switch__knob::before,
+.rs-switch__knob::after {
+  content: '';
+  flex: none;
+  width: 10px;
+  height: 12px;
+}
+.rs-switch__knob::before {
+  background: linear-gradient(90deg, #2A2A2A 0%, #3A3A3A 100%);
+}
+.rs-switch__knob::after {
+  background: linear-gradient(270deg, #2C2C2C 0%, #181818 100%);
+}
+
+/* --- State=Off, Status=Hovered: ручка немного смещена --- */
+.rs-switch:not(.is-on):hover .rs-switch__knob { left: 13.89%; }
+
+/* --- State=On --- */
+.rs-switch.is-on {
+  background: var(--switch-track-on);
+  box-shadow: var(--switch-track-shadow-on);
+}
+.rs-switch.is-on::after { background: var(--switch-fill-on); }
+.rs-switch.is-on .rs-switch__knob { left: 30.56%; }
+
+/* State=On, Status=Hovered: ручка отходит назад */
+.rs-switch.is-on:hover .rs-switch__knob { left: 22.22%; }
+
+.rs-switch.is-disabled { opacity: 0.4; pointer-events: none; }
+
+/* Подпись рядом со свитчем */
+.rs-switch-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.rs-switch-row__label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* ============================================================
+   Checkbox — docs/design/components/Checkbox.css
+   12×12, галочка Vector 1 6×4 (две линии border).
+   ============================================================ */
+.rs-check {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  background: rgba(112, 112, 112, 0.3);
+  border: 1px solid transparent;
+  border-radius: var(--r-check);
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+/* Галочка: собрана из двух повёрнутых линий внутри бокса 6×4 */
+.rs-check__mark {
+  position: relative;
+  width: 6px;
+  height: 4px;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+.rs-check__mark::before,
+.rs-check__mark::after {
+  content: '';
+  position: absolute;
+  background: var(--accent-check);
+  border-radius: 1px;
+}
+/* короткая ветвь галочки */
+.rs-check__mark::before {
+  width: 3.1px;
+  height: 1px;
+  left: -0.4px;
+  top: 2.2px;
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+/* длинная ветвь галочки */
+.rs-check__mark::after {
+  width: 5.4px;
+  height: 1px;
+  left: 1.5px;
+  top: 3.1px;
+  transform: rotate(-50deg);
+  transform-origin: left center;
+}
+
+/* Off / Hovered */
+.rs-check:hover {
+  background: rgba(112, 112, 112, 0.3);
+  border-color: rgba(112, 112, 112, 0.5);
+  box-shadow: 0px 0px 0px 2px rgba(112, 112, 112, 0.15);
+}
+/* Off / Pressed */
+.rs-check:active {
+  background: rgba(112, 112, 112, 0.2);
+  border-color: #707070;
+  box-shadow: 0px 0px 0px 2px rgba(112, 112, 112, 0.15);
+}
+.rs-check:active .rs-check__mark {
+  opacity: 1;
+}
+.rs-check:active .rs-check__mark::before,
+.rs-check:active .rs-check__mark::after { background: var(--text-muted); }
+
+/* On / Enable */
+.rs-check.is-on {
+  background: rgba(232, 89, 53, 0.1);
+  border-color: var(--accent-check);
+}
+.rs-check.is-on .rs-check__mark { opacity: 1; }
+
+/* On / Hovered */
+.rs-check.is-on:hover {
+  background: rgba(232, 89, 53, 0.3);
+  border-color: var(--accent-check);
+  box-shadow: 0px 0px 0px 2px rgba(232, 89, 53, 0.15);
+}
+/* On / Pressed — рамка гаснет, галочка скрывается */
+.rs-check.is-on:active {
+  background: rgba(232, 89, 53, 0.3);
+  border-color: rgba(232, 89, 53, 0.5);
+  box-shadow: 0px 0px 0px 2px rgba(232, 89, 53, 0.15);
+}
+.rs-check.is-on:active .rs-check__mark { opacity: 0; }
+
+/* Промежуточное состояние (часть строк выбрана) */
+.rs-check.is-mixed {
+  background: rgba(232, 89, 53, 0.1);
+  border-color: var(--accent-check);
+}
+.rs-check.is-mixed .rs-check__mark { opacity: 0; }
+.rs-check.is-mixed::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 1px;
+  background: var(--accent-check);
+  border-radius: 1px;
+}
+
+.rs-check-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.rs-check-row__label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Radio button — docs/design/components/Radio button.css
+   12×12 круг, точка Ellipse 7 7×7.
+   ============================================================ */
+.rs-radio {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  background: rgba(112, 112, 112, 0.3);
+  border: 1px solid transparent;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+.rs-radio__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--r-pill);
+  background: var(--text-muted);
+  opacity: 0;
+  transition: opacity 120ms ease, background 120ms ease;
+}
+
+/* Off / Hovered */
+.rs-radio:hover {
+  border-color: rgba(112, 112, 112, 0.5);
+  box-shadow: 0px 0px 0px 2px rgba(112, 112, 112, 0.15);
+}
+/* Off / Pressed — точка появляется серой */
+.rs-radio:active {
+  background: rgba(112, 112, 112, 0.2);
+  border-color: var(--text-muted);
+  box-shadow: 0px 0px 0px 2px rgba(112, 112, 112, 0.15);
+}
+.rs-radio:active .rs-radio__dot { opacity: 1; }
+
+/* On / Enable */
+.rs-radio.is-on {
+  background: rgba(232, 89, 53, 0.2);
+  border-color: var(--accent-check);
+}
+.rs-radio.is-on .rs-radio__dot {
+  opacity: 1;
+  background: var(--accent-check);
+}
+/* On / Hovered */
+.rs-radio.is-on:hover {
+  background: rgba(232, 89, 53, 0.3);
+  border-color: var(--accent-check);
+  box-shadow: 0px 0px 0px 2px rgba(232, 89, 53, 0.15);
+}
+/* On / Pressed — точка гаснет */
+.rs-radio.is-on:active {
+  background: rgba(232, 89, 53, 0.3);
+  border-color: rgba(232, 89, 53, 0.5);
+}
+.rs-radio.is-on:active .rs-radio__dot { opacity: 0; }
+
+.rs-radio-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.rs-radio-row__label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* ============================================================
+   Info — docs/design/components/Info.css
+   15×15 круг с восклицательным знаком (Vector 3.91×8).
+   ============================================================ */
+.rs-info {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--text-muted);
+  border-radius: var(--r-pill);
+  cursor: help;
+  transition: border-color 120ms ease, background 120ms ease,
+    box-shadow 120ms ease;
+}
+.rs-info__glyph {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 8px;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  transition: color 120ms ease;
+}
+.rs-info:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-check);
+  box-shadow: 0px 0px 0px 2px rgba(232, 89, 53, 0.15);
+}
+.rs-info:hover .rs-info__glyph { color: var(--accent-check); }
+
+/* Всплывающая подсказка — «Подсказка про папки» / «скорости загрузки» */
+.rs-tip {
+  position: absolute;
+  z-index: 40;
+  display: none;
+  width: 300px;
+  padding: 10px 15px;
+  background: var(--bg-tooltip);
+  border: 1px solid var(--tooltip-border);
+  border-radius: var(--r-btn);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.rs-tip.is-accent { color: var(--accent); }
+.rs-tip.is-visible { display: block; }
+
+/* ============================================================
+   input field — docs/design/components/input field.css
+   366×36, состояния enable / hovered / pressed(focus) / disable.
+   ============================================================ */
+.rs-field {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: var(--h-field);
+  padding: 10px;
+  gap: 8px;
+  background: var(--field-bg);
+  border: 1px solid transparent;
+  border-radius: var(--r-btn);
+  cursor: text;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.rs-field:hover { box-shadow: var(--field-shadow-hover); }
+.rs-field.is-focus {
+  border-color: var(--field-border-pressed);
+  box-shadow: none;
+}
+.rs-field.is-disabled {
+  background: var(--field-bg);
+  border-color: var(--field-border-disabled);
+  pointer-events: none;
+}
+.rs-field.is-disabled .rs-field__input,
+.rs-field.is-disabled .rs-field__at { color: var(--text-muted-20); }
+
+.rs-field__body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Префикс «@» — Figma: 14×14, rgba(112,112,112,0.4) */
+.rs-field__at {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(112, 112, 112, 0.4);
+}
+.rs-field.has-at .rs-field__at { display: flex; }
+
+.rs-field__input {
+  width: 100%;
+  min-width: 0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  user-select: text;
+  cursor: text;
+}
+.rs-field.is-focus .rs-field__input { color: var(--text-strong); }
+.rs-field__input::placeholder { color: var(--text-muted-20); }
+
+/* Vector 2 — шеврон у select-подобных полей */
+.rs-field__chevron {
+  position: relative;
+  flex: none;
+  width: 10px;
+  height: 5px;
+  display: none;
+}
+.rs-field.has-chevron .rs-field__chevron { display: block; }
+.rs-field__chevron::before,
+.rs-field__chevron::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  width: 6.4px;
+  height: 1px;
+  background: var(--text-muted);
+  border-radius: 1px;
+}
+.rs-field__chevron::before {
+  left: -0.4px;
+  transform: rotate(38deg);
+  transform-origin: left center;
+}
+.rs-field__chevron::after {
+  right: -0.4px;
+  transform: rotate(-38deg);
+  transform-origin: right center;
+}
+
+/* Селект: то же поле, но текст ярче и курсор-указатель */
+.rs-field.is-select { cursor: pointer; }
+.rs-field.is-select .rs-field__input { cursor: pointer; }
+
+/* Раскрывающийся список */
+.rs-select-menu {
+  position: absolute;
+  z-index: 60;
+  display: none;
+  flex-direction: column;
+  padding: 4px;
+  gap: 2px;
+  background: var(--bg-tooltip);
+  border: 1px solid var(--tooltip-border);
+  border-radius: var(--r-btn);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.55);
+}
+.rs-select-menu.is-open { display: flex; }
+.rs-select-menu__item {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-align: left;
+  white-space: nowrap;
+}
+.rs-select-menu__item:hover {
+  background: rgba(112, 112, 112, 0.12);
+  color: var(--text-primary);
+}
+.rs-select-menu__item.is-active { color: var(--accent); }
+
+/* Заголовок над полем: «Instagram-аккаунт» + Info */
+.rs-field-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+/* Пояснение под полем — IBM Plex Mono 300 12/16, muted 50% */
+.rs-hint {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted-50);
+}
+
+/* ============================================================
+   Stepper + Spinner — components/Stepper.css, Spinner.css
+   Spinner 83×42, шаговые кнопки 16×16.
+   ============================================================ */
+.rs-spinner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 10px;
+  gap: 10px;
+  height: 42px;
+  background: var(--field-bg);
+  border-radius: var(--r-btn);
+}
+.rs-spinner__field {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 18px;
+}
+.rs-spinner__value {
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  user-select: text;
+}
+.rs-spinner__steppers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2px;
+  flex: none;
+}
+
+.rs-stepper {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(0deg, #333333 0%, #191919 100%);
+  border-radius: var(--r-small);
+  cursor: pointer;
+  transition: background 120ms ease, box-shadow 120ms ease;
+}
+/* Icon — шеврон 5×2.5 из двух линий */
+.rs-stepper__icon {
+  position: relative;
+  width: 5px;
+  height: 2.5px;
+}
+.rs-stepper__icon::before,
+.rs-stepper__icon::after {
+  content: '';
+  position: absolute;
+  top: 0.75px;
+  width: 3.3px;
+  height: 1px;
+  background: var(--text-muted);
+  border-radius: 1px;
+  transition: background 120ms ease;
+}
+.rs-stepper__icon::before {
+  left: -0.2px;
+  transform: rotate(-40deg);
+  transform-origin: left center;
+}
+.rs-stepper__icon::after {
+  right: -0.2px;
+  transform: rotate(40deg);
+  transform-origin: right center;
+}
+/* Кнопка «вниз» — тот же шеврон, повёрнутый на 180° */
+.rs-stepper.is-down { transform: rotate(180deg); }
+
+.rs-stepper:hover {
+  background: rgba(51, 51, 51, 0.6);
+  box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.25);
+}
+.rs-stepper:active {
+  background: linear-gradient(0deg,
+    rgba(51, 51, 51, 0.3) 0%, rgba(25, 25, 25, 0.3) 100%);
+  box-shadow: none;
+}
+.rs-stepper:active .rs-stepper__icon::before,
+.rs-stepper:active .rs-stepper__icon::after {
+  background: rgba(112, 112, 112, 0.5);
+}
+.rs-stepper.is-disabled {
+  background: var(--field-bg);
+  box-shadow: none;
+  pointer-events: none;
+}
+.rs-stepper.is-disabled .rs-stepper__icon::before,
+.rs-stepper.is-disabled .rs-stepper__icon::after { background: #2F2F2F; }
+
+/* ============================================================
+   Simple button — docs/design/components/Simple button.css
+   366×44, тёмная плашка.
+   ============================================================ */
+.rs-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 100%;
+  height: var(--h-btn);
+  background: var(--plate-off);
+  box-shadow: inset 0px 0.5px 0px 1px #26282A;
+  border-radius: var(--r-btn);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  transition: background 120ms ease, box-shadow 120ms ease,
+    color 120ms ease;
+}
+.rs-btn:hover {
+  background:
+    linear-gradient(0deg, rgba(25, 25, 25, 0.4) 0%,
+      rgba(51, 51, 51, 0.4) 100%),
+    var(--plate-off);
+  box-shadow: inset 0px 0.5px 0px 1px #26282A;
+}
+.rs-btn:active {
+  background: var(--plate-off);
+  box-shadow: none;
+  color: rgba(180, 180, 180, 0.5);
+}
+
+/* ============================================================
+   Второстепенная кнопка — components/Второстепеная кнопка.css
+   155×30, pill, три состояния On + одно Off (disabled).
+   ============================================================ */
+.rs-btn-ghost {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 15px;
+  gap: 10px;
+  height: 30px;
+  border: 0.5px solid var(--text-primary);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  white-space: nowrap;
+  transition: border-color 120ms ease, color 120ms ease,
+    background 120ms ease;
+}
+.rs-btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.rs-btn-ghost:active {
+  background: rgba(211, 82, 45, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.rs-btn-ghost.is-disabled {
+  border-color: var(--text-disabled);
+  color: var(--text-disabled);
+  background: none;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Search button — docs/design/components/Search button.css
+   366×44. Стеклянная плашка + 5 слоёв свечения под ней.
+   ============================================================ */
+.rs-glass {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: var(--h-btn);
+  cursor: pointer;
+}
+
+/* Rectangle 617 — тёмная подложка с красной линией снизу */
+.rs-glass__base {
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 0;
+  height: 42px;
+  background: var(--glow-base);
+  box-shadow: var(--glow-red-line);
+  border-radius: var(--r-btn);
+}
+
+/* Слои свечения (Rectangle 616/617/618/619, Ellipse 6) */
+.rs-glass__glow {
+  position: absolute;
+  border-radius: 25px;
+  pointer-events: none;
+}
+/* Rectangle 617 — яркое ядро, видно только на hover */
+.rs-glass__glow--core {
+  left: 6.56%;
+  right: 6.56%;
+  top: 52.27%;
+  bottom: 2.27%;
+  background: var(--glow-grad-100);
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+/* Rectangle 616 — основной ореол */
+.rs-glass__glow--halo {
+  left: 6.83%;
+  right: 6.83%;
+  top: 45.45%;
+  bottom: 2.27%;
+  background: var(--glow-grad-70);
+}
+/* Rectangle 619 — широкий разлив, появляется на hover */
+.rs-glass__glow--wide {
+  left: 0;
+  right: 0;
+  top: 31.82%;
+  bottom: 2.27%;
+  background: var(--glow-grad-70);
+  visibility: hidden;
+}
+/* Ellipse 6 — блик сверху */
+.rs-glass__glow--top {
+  width: 130px;
+  height: 11px;
+  left: 3px;
+  top: 1px;
+  border-radius: 50%;
+  filter: blur(4px);
+  background: var(--glow-ellipse-70);
+}
+/* Rectangle 618 — оранжевая полоса */
+.rs-glass__glow--line {
+  left: 6.83%;
+  right: 6.83%;
+  top: 72.73%;
+  bottom: 2.27%;
+  background: var(--glow-orange);
+}
+
+/* Frame 1762 — сама стеклянная плашка */
+.rs-glass__plate {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow-enable);
+  backdrop-filter: blur(7.5px);
+  border-radius: var(--r-btn);
+  transition: box-shadow 140ms ease;
+}
+
+.rs-glass__label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-bright);
+  white-space: nowrap;
+}
+
+/* Status=Hovered */
+.rs-glass:hover .rs-glass__plate { box-shadow: var(--glass-shadow-hover); }
+.rs-glass:hover .rs-glass__glow--core { opacity: 1; }
+.rs-glass:hover .rs-glass__glow--wide { visibility: visible; }
+
+/* Status=Pressed */
+.rs-glass:active .rs-glass__plate {
+  box-shadow: var(--glass-shadow-pressed);
+}
+.rs-glass:active .rs-glass__base {
+  box-shadow: var(--glow-red-line-dim);
+}
+.rs-glass:active .rs-glass__glow--halo,
+.rs-glass:active .rs-glass__glow--core { opacity: 0.35; }
+.rs-glass:active .rs-glass__label {
+  color: rgba(253, 241, 229, 0.7);
+}
+
+/* State=Off, Status=Disable — плашка тухнет, свечение остаётся снизу */
+.rs-glass.is-disabled { cursor: default; }
+.rs-glass.is-disabled .rs-glass__plate {
+  background: var(--plate-off);
+  box-shadow: 0px 2px 0px 1px #101010, inset 0px 0.5px 0px 1px #26282A;
+  backdrop-filter: none;
+}
+.rs-glass.is-disabled .rs-glass__label { color: var(--text-muted); }
+.rs-glass.is-disabled .rs-glass__glow--core { opacity: 0; }
+.rs-glass.is-disabled .rs-glass__glow--wide { visibility: hidden; }
+
+/* ============================================================
+   Social media button — components/Social media button.css
+   36×36. Та же слоистая схема, но квадратная и с иконкой.
+   ============================================================ */
+.rs-soc {
+  position: relative;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+/* Rectangle 617 — подложка со свечением (только для State=On) */
+.rs-soc__base {
+  position: absolute;
+  inset: 0;
+  background: var(--glow-base);
+  box-shadow: var(--glow-red-line);
+  border-radius: 9px;
+  visibility: hidden;
+}
+.rs-soc__glow {
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
+  border-radius: 25px;
+}
+/* Rectangle 616 */
+.rs-soc__glow--halo {
+  left: 5.56%;
+  right: 5.56%;
+  top: 36.11%;
+  bottom: 8.33%;
+  background: var(--glow-grad-70);
+}
+/* Ellipse 6 */
+.rs-soc__glow--top {
+  left: 5.56%;
+  right: 25%;
+  top: 2.78%;
+  bottom: 72.22%;
+  border-radius: 50%;
+  filter: blur(3px);
+  background: var(--glow-ellipse-70);
+}
+/* Rectangle 618 */
+.rs-soc__glow--line {
+  left: 5.56%;
+  right: 5.56%;
+  top: 75%;
+  bottom: 8.33%;
+  background: var(--glow-orange);
+}
+
+/* Frame 1762 — плашка 34×34, центрирована внутри 36×36 */
+.rs-soc__plate {
+  position: absolute;
+  left: 1px;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: var(--plate-off);
+  box-shadow: var(--plate-off-shadow);
+  border-radius: var(--r-glass);
+  transition: background 140ms ease, box-shadow 140ms ease;
+}
+
+.rs-soc__icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: color 140ms ease, filter 140ms ease;
+}
+.rs-soc__icon svg { width: 100%; height: 100%; display: block; }
+
+/* State=Off, Status=Hovered — плашка светлеет, свечения нет */
+.rs-soc:not(.is-on):hover .rs-soc__plate {
+  background: var(--plate-off-hover);
+  box-shadow: var(--plate-off-hover-shadow);
+  top: 2px;
+}
+/* State=Off, Status=Pressed */
+.rs-soc:not(.is-on):active .rs-soc__base,
+.rs-soc:not(.is-on):active .rs-soc__glow--halo,
+.rs-soc:not(.is-on):active .rs-soc__glow--top { visibility: visible; }
+.rs-soc:not(.is-on):active .rs-soc__base {
+  box-shadow: var(--glow-red-line-dim);
+}
+.rs-soc:not(.is-on):active .rs-soc__glow--halo {
+  background: var(--glow-grad-30);
+}
+.rs-soc:not(.is-on):active .rs-soc__glow--top {
+  background: var(--glow-ellipse-20);
+}
+.rs-soc:not(.is-on):active .rs-soc__plate {
+  top: 2px;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow-pressed);
+  backdrop-filter: blur(2px);
+}
+.rs-soc:not(.is-on):active .rs-soc__icon {
+  color: var(--text-bright);
+  mix-blend-mode: overlay;
+}
+
+/* State=On, Status=Enable — свечение включено, иконка белая */
+.rs-soc.is-on .rs-soc__base,
+.rs-soc.is-on .rs-soc__glow { visibility: visible; }
+.rs-soc.is-on .rs-soc__plate {
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow-enable);
+  backdrop-filter: blur(4px);
+}
+.rs-soc.is-on .rs-soc__icon { color: #FFFFFF; }
+
+/* State=On, Status=Hovered — иконка получает свечение */
+.rs-soc.is-on:hover .rs-soc__plate {
+  box-shadow: var(--glass-shadow-hover);
+  backdrop-filter: blur(2px);
+}
+.rs-soc.is-on:hover .rs-soc__icon { filter: drop-shadow(0 0 5px rgba(244, 146, 17, 0.7)); }
+
+/* State=On, Status=Pressed */
+.rs-soc.is-on:active .rs-soc__plate {
+  box-shadow: var(--glass-shadow-pressed);
+}
+.rs-soc.is-on:active .rs-soc__base {
+  box-shadow: var(--glow-red-line-dim);
+}
+.rs-soc.is-on:active .rs-soc__glow--halo {
+  background: var(--glow-grad-30);
+}
+.rs-soc.is-on:active .rs-soc__icon {
+  color: var(--text-bright);
+  filter: none;
+}
+
+/* Недоступная соцсеть (ещё не подключена) */
+.rs-soc.is-locked { cursor: default; }
+.rs-soc.is-locked .rs-soc__icon { color: #3A3A3A; }
+.rs-soc.is-locked:hover .rs-soc__plate {
+  background: var(--plate-off);
+  box-shadow: var(--plate-off-shadow);
+  top: 0;
+}
+
+/* ============================================================
+   Кнопка редактировать — components/Кнопка редактировать.css
+   20×20, иконка карандаша из трёх повёрнутых элементов.
+   ============================================================ */
+.rs-edit {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(180deg,
+    rgba(25, 25, 25, 0.2) 0%, rgba(22, 22, 22, 0.2) 100%);
+  box-shadow: 0px 2px 0px #101010, inset 0px 0.5px 0px 1px #26282A;
+  border-radius: var(--r-small);
+  opacity: 0;
+  transition: opacity 120ms ease, background 120ms ease,
+    box-shadow 120ms ease;
+}
+.rs-edit__icon {
+  position: relative;
+  width: 7.23px;
+  height: 15.03px;
+  transform: rotate(45deg);
+}
+/* Union — корпус карандаша */
+.rs-edit__icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--text-primary);
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 50% 100%, 0 72%);
+  transition: background 120ms ease;
+}
+/* Rectangle 626 / Vector 3 — внутренние прорези */
+.rs-edit__icon::after {
+  content: '';
+  position: absolute;
+  left: 1.6px;
+  right: 1.6px;
+  top: 3.4px;
+  height: 0.9px;
+  background: #1D1D1D;
+}
+.rs-edit:hover {
+  background: linear-gradient(0deg,
+      rgba(180, 180, 180, 0.08), rgba(180, 180, 180, 0.08)),
+    linear-gradient(180deg, rgba(25, 25, 25, 0.2) 0%,
+      rgba(22, 22, 22, 0.2) 100%);
+}
+.rs-edit:active {
+  background: linear-gradient(0deg,
+      rgba(180, 180, 180, 0.15), rgba(180, 180, 180, 0.15)),
+    linear-gradient(180deg, rgba(25, 25, 25, 0.2) 0%,
+      rgba(22, 22, 22, 0.2) 100%);
+  box-shadow: 0px 0px 0px 2px rgba(180, 180, 180, 0.1),
+    inset 0px 0px 0px 1px rgba(180, 180, 180, 0.1);
+}
+.rs-edit:active .rs-edit__icon::before {
+  background: rgba(180, 180, 180, 0.5);
+}
+
+/* ============================================================
+   Смена языка — components/Смена языка.css
+   ============================================================ */
+.rs-lang {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.rs-lang__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  transition: color 120ms ease, font-weight 120ms ease;
+}
+.rs-lang__item:hover { color: var(--text-primary); }
+.rs-lang__item.is-active {
+  font-weight: 500;
+  color: var(--text-primary);
+}

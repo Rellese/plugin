@@ -1,0 +1,710 @@
+/* ============================================================
+   ReferenceSync — раскладка главного экрана
+   Источник: docs/design/screen_main.css (макет 1600×1000)
+
+   Геометрия из Figma:
+     Кнопка верхнего меню : 1600×44   @ 0,0
+     1 блок (шапка)       : 1540×46   @ 30,74
+     2 блок (соцсети)     : 1542×58   @ 30,140
+     3 блок (настройки)   : 403×752   @ 30,218
+     4 блок (статус)      : 1132×43   @ 438,218
+     5 блок (таблица)     : 1132×470  @ 438,266
+     6 блок (нумерация)   : 1132×180  @ 438,741
+     Search button        : 366×44    @ 1204,926
+
+   Макет переведён в grid, чтобы окно плагина могло меняться
+   в размерах: пропорции и отступы Figma сохранены, но колонки
+   и таблица тянутся.
+   ============================================================ */
+
+.rs-app {
+  position: relative;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  min-width: 1200px;
+  min-height: 760px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-app);
+  border-radius: var(--r-screen);
+  overflow: hidden;
+
+  /* 44 титул | 46 шапка | 58 соцсети | 1fr рабочая область | 44 кнопка */
+  grid-template-rows: 44px 46px 58px minmax(0, 1fr) auto;
+  grid-template-columns: 1fr;
+  row-gap: 0;
+}
+
+/* ============================================================
+   Кнопка верхнего меню — 1600×44, #161616
+   ============================================================ */
+.rs-titlebar {
+  grid-row: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30px;
+  gap: 10px;
+  height: 44px;
+  background: var(--bg-card);
+  -webkit-app-region: drag;
+}
+.rs-titlebar__dot {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}
+.rs-titlebar__dot--close {
+  background: #FF0F39;
+  border: 1px solid #FF0001;
+}
+.rs-titlebar__dot--min {
+  background: #FFC600;
+  border: 1px solid #FFB200;
+}
+.rs-titlebar__dot--max { background: #00BB30; }
+.rs-titlebar__dot:hover { filter: brightness(1.2); }
+
+/* ============================================================
+   1 блок — шапка: название + версия + языки
+   ============================================================ */
+.rs-header {
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 8px 30px 0;
+  height: 46px;
+}
+.rs-header__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.rs-header__title {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+.rs-header__subtitle {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.rs-header__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.rs-header__version {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   2 блок — переключатели соцсетей, 1542×58, рамка #212121
+   ============================================================ */
+.rs-social {
+  grid-row: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 30px 0;
+  padding: 10px 20px;
+  height: 58px;
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-card);
+}
+.rs-social__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+.rs-social__meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8px;
+  height: 36px;
+}
+.rs-social__caption {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.rs-social__value {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--accent);
+}
+
+/* ============================================================
+   Рабочая область: левая колонка 403px + правая 1fr
+   Зазор между 3 и 4 блоком в Figma: 438 - (30+403) = 5px
+   ============================================================ */
+.rs-work {
+  grid-row: 4;
+  display: grid;
+  grid-template-columns: 403px minmax(0, 1fr);
+  column-gap: 5px;
+  min-height: 0;
+  margin: 20px 30px 0;
+}
+
+/* ============================================================
+   3 блок — настройки поиска, 403×752
+   padding: 15px 5px 15px 20px, внутри скролл-контейнер 366px
+   ============================================================ */
+.rs-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 15px 5px 15px 20px;
+  gap: 8px;
+  min-height: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-card);
+}
+.rs-panel__body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 8px 0 0;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Шаг: заголовок + содержимое */
+.rs-step {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px;
+  flex: none;
+}
+.rs-step__title {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.rs-step__group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+.rs-step__row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+/* Разделитель — 366×0, dashed #212121 */
+.rs-divider {
+  flex: none;
+  width: 100%;
+  height: 0;
+  border-top: 1px dashed var(--border-dashed);
+}
+
+/* Режим поиска: радио + заголовок, ниже описание */
+.rs-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rs-mode__head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.rs-mode__spinner { flex: none; width: 83px; }
+
+/* Фильтры: чекбоксы в ряд, gap 30 */
+.rs-filter-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+}
+
+/* ============================================================
+   Правая колонка: 4 блок / 5 блок / 6 блок
+   Figma: 43 + 5 + 470 + 5 + 180 = 703 (+ отступ до кнопки)
+   ============================================================ */
+.rs-right {
+  display: grid;
+  grid-template-rows: 43px minmax(0, 1fr) auto;
+  row-gap: 5px;
+  min-height: 0;
+}
+
+/* ---------- 4 блок — статус, 1132×43 ---------- */
+.rs-status {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  height: 43px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-card);
+}
+.rs-status__text,
+.rs-status__hint {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rs-status__text { color: var(--text-primary); }
+.rs-status__hint { text-align: right; }
+.rs-status.is-busy .rs-status__text { color: var(--accent); }
+
+/* ---------- 5 блок — таблица результатов, 1132×470 ---------- */
+.rs-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0 0;
+  gap: 23px;
+  min-height: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+
+/* Шапка: заголовок + кнопка «Очистить список», ниже настройки */
+.rs-results__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  flex: none;
+  width: calc(100% - 40px);
+}
+.rs-results__title-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.rs-results__title {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+.rs-results__tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---------- Таблица ---------- */
+.rs-table {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+/* Колонки: чекбокс+миниатюра | автор | тип | структура | имя | описание
+   Figma: 90 / 150 / 150 / 150 / 200 / 245 */
+.rs-table__grid {
+  display: grid;
+  grid-template-columns:
+    90px
+    minmax(110px, 150px)
+    minmax(90px, 150px)
+    minmax(90px, 150px)
+    minmax(140px, 200px)
+    minmax(180px, 1fr);
+  align-items: center;
+  gap: 21px;
+  padding: 10px 20px;
+}
+
+/* Название колонок */
+.rs-table__header {
+  flex: none;
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+}
+.rs-table__header .rs-table__grid { padding: 7px 20px; }
+.rs-table__col {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Тело таблицы */
+.rs-table__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* 1 Пункт — 1132×70, фон rgba(38,38,38,0.2) у чётных */
+.rs-row {
+  position: relative;
+  background: transparent;
+  transition: background 120ms ease;
+}
+.rs-row:nth-child(odd) { background: var(--bg-row); }
+.rs-row:hover { background: rgba(38, 38, 38, 0.45); }
+.rs-row.is-selected { background: rgba(211, 82, 45, 0.07); }
+
+/* 1 колонка — чекбокс + миниатюра, space-between в 90px */
+.rs-row__lead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Миниатюра — 40×40, radius 5 */
+.rs-thumb {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-small);
+  background: #D9D9D9;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.rs-thumb.is-empty {
+  background: #1D1D1D;
+  border: 1px solid var(--border-card);
+}
+.rs-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ячейки таблицы — CommitMono 11/12 */
+.rs-cell {
+  font-family: var(--font-table);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rs-cell--author { color: var(--accent); }
+.rs-cell--name {
+  color: var(--text-primary);
+  white-space: pre-line;
+  max-height: 24px;
+  line-height: 12px;
+}
+
+/* Описание в Eagle — 247×50 с прокруткой и кнопкой правки */
+.rs-cell--desc {
+  position: relative;
+  height: 50px;
+  padding-right: 10px;
+}
+.rs-desc__text {
+  height: 50px;
+  overflow-y: auto;
+  padding-right: 8px;
+  font-family: var(--font-table);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  white-space: pre-line;
+  user-select: text;
+}
+.rs-cell--desc .rs-edit {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.rs-row:hover .rs-edit { opacity: 1; }
+
+/* Редактируемая ячейка */
+.rs-editable {
+  width: 100%;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: rgba(38, 38, 38, 0.35);
+  border: 1px solid var(--field-border-pressed);
+  font-family: var(--font-table);
+  font-size: 11px;
+  line-height: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-strong);
+  user-select: text;
+  cursor: text;
+}
+/* Отредактированное значение помечается точкой */
+.rs-cell.is-edited { color: var(--text-bright); }
+.rs-cell.is-edited::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: middle;
+}
+
+/* Пустое состояние таблицы */
+.rs-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  min-height: 160px;
+  padding: 20px;
+  text-align: center;
+}
+.rs-empty__title {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.rs-empty__text {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted-50);
+  max-width: 420px;
+}
+
+/* ---------- 6 блок — нумерация и описание, 1132×180 ---------- */
+.rs-naming {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 15px 5px 15px 20px;
+  gap: 8px;
+  max-height: 260px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-card);
+}
+.rs-naming__body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 8px 15px 0;
+  gap: 20px;
+  width: 100%;
+  max-height: 230px;
+}
+.rs-naming__title {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+/* Настройки нумерации: две колонки по Figma (1 Блок / 2 Блок) */
+.rs-naming__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px 30px;
+}
+.rs-naming__cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rs-naming__label {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   Нижняя полоса: Simple button слева, Search button справа
+   Figma: Search button @ 1204,926 — то есть по правому краю
+   правой колонки.
+   ============================================================ */
+.rs-footer {
+  grid-row: 5;
+  display: grid;
+  grid-template-columns: 403px minmax(0, 1fr);
+  column-gap: 5px;
+  align-items: center;
+  margin: 15px 30px 20px;
+}
+.rs-footer__left { width: 100%; }
+.rs-footer__right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+.rs-footer__action { width: 366px; }
+
+/* ============================================================
+   Журнал (панель поверх, открывается кнопкой)
+   ============================================================ */
+.rs-log {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 79px;
+  z-index: 50;
+  display: none;
+  flex-direction: column;
+  max-height: 40vh;
+  padding: 12px 15px;
+  background: var(--bg-tooltip);
+  border: 1px solid var(--tooltip-border);
+  border-radius: var(--r-btn);
+}
+.rs-log.is-open { display: flex; }
+.rs-log__list {
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  user-select: text;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.rs-log__line { padding: 1px 0; }
+.rs-log__line--err { color: #FF6A4D; }
+.rs-log__line--ok { color: #6ABF69; }
+.rs-log__line--warn { color: #FFC600; }
+
+/* Модальное окно выбора коллекций */
+.rs-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 80;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 8, 8, 0.72);
+}
+.rs-modal.is-open { display: flex; }
+.rs-modal__box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 520px;
+  max-height: 70vh;
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-card);
+}
+.rs-modal__title {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+.rs-modal__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  min-height: 60px;
+}
+.rs-modal__foot {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.rs-modal__foot .rs-btn-ghost { min-width: 130px; }

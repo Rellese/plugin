@@ -1,0 +1,258 @@
+/* ============================================================
+   ReferenceSync — design tokens
+   Источник: docs/design/screen_main.css + docs/design/components/*
+   Все значения перенесены из Figma без округления.
+   ============================================================ */
+
+/* ---------- Шрифты ---------- */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 300;
+  font-display: block;
+  src: url('../assets/fonts/IBMPlexMono-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 400;
+  font-display: block;
+  src: url('../assets/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 500;
+  font-display: block;
+  src: url('../assets/fonts/IBMPlexMono-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 600;
+  font-display: block;
+  src: url('../assets/fonts/IBMPlexMono-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 400;
+  font-display: block;
+  src: url('../assets/fonts/Manrope-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 500;
+  font-display: block;
+  src: url('../assets/fonts/Manrope-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 700;
+  font-display: block;
+  src: url('../assets/fonts/Manrope-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'CommitMono';
+  font-weight: 400;
+  font-display: block;
+  src: url('../assets/fonts/CommitMono-400-Regular.woff2') format('woff2');
+}
+
+:root {
+  /* ---------- Поверхности ---------- */
+  --bg-app: #101010;
+  --bg-card: #161616;
+  --bg-row: rgba(38, 38, 38, 0.2);
+  --bg-tooltip: #1E1E1E;
+  --border-app: #222222;
+  --border-card: #212121;
+  --border-dashed: #212121;
+  --divider: rgba(33, 33, 33, 0.5);
+  --tooltip-border: rgba(112, 112, 112, 0.1);
+
+  /* ---------- Текст ---------- */
+  --text-bright: #FDF1E5;
+  --text-strong: #EAEAEA;
+  --text-primary: #B4B4B4;
+  --text-muted: #707070;
+  --text-muted-50: rgba(112, 112, 112, 0.5);
+  --text-muted-20: rgba(112, 112, 112, 0.2);
+  --text-disabled: #434343;
+  --accent: #D3522D;
+  --accent-check: #E85935;
+
+  /* ---------- Полосы прокрутки ---------- */
+  --scroll-track: rgba(49, 49, 49, 0.3);
+  --scroll-thumb: #313131;
+
+  /* ---------- Шрифтовые стеки ---------- */
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-table: 'CommitMono', 'IBM Plex Mono', monospace;
+
+  /* ---------- Свитч (switch.css) ---------- */
+  --switch-track-off: #292929;
+  --switch-track-on: rgba(211, 82, 45, 0.2);
+  --switch-track-shadow-off:
+    inset 0.6px 0.8px 1.2px #0B0C10,
+    inset -0.4px -0.6px 1px rgba(133, 133, 133, 0.8);
+  --switch-track-shadow-on:
+    inset 0.6px 0.8px 1.2px #922D10,
+    inset -0.4px -0.6px 1px rgba(248, 121, 85, 0.8);
+  --switch-slot: #070709;
+  --switch-fill-off:
+    radial-gradient(62.92% 65.91% at 50% 0%, #6D6D6D 0%,
+      rgba(109, 109, 109, 0.2) 64.39%, rgba(109, 109, 109, 0) 100%),
+    radial-gradient(60.89% 100% at 50% 0%, #3B3B3B 16.64%,
+      #222222 90.26%, #222222 100%);
+  --switch-fill-on:
+    radial-gradient(98.16% 65.91% at 50% 0%, rgba(246, 213, 203, 0.839216) 0%,
+      rgba(211, 82, 45, 0.2) 64.39%, rgba(211, 82, 45, 0) 100%),
+    radial-gradient(60.89% 100% at 50% 0%, #D3522D 16.64%,
+      #AB3919 90.26%, #69200C 100%);
+  --switch-knob:
+    radial-gradient(54.97% 38.51% at 60.25% 61.49%, #111217 0%,
+      rgba(17, 18, 23, 0) 100%),
+    linear-gradient(180deg, #9A9A9A 0%, #242424 100%);
+
+  /* ---------- Стеклянная кнопка (Search / Social) ---------- */
+  --glass-bg:
+    radial-gradient(40.16% 76.19% at 84.07% 7.14%,
+      rgba(226, 22, 22, 0.22) 0%, rgba(226, 22, 22, 0) 100%),
+    radial-gradient(66.12% 53.97% at 9.84% 25.24%,
+      rgba(238, 131, 49, 0.21) 4.19%, rgba(238, 81, 49, 0.21) 23.46%,
+      rgba(238, 81, 49, 0) 100%),
+    rgba(22, 22, 22, 0.1);
+  --glass-shadow-enable:
+    0px 1px 0px 1px #5B0B02,
+    inset -3px 3px 5.2px 2px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.5px 0.5px #EE8331,
+    inset 0px 0px 4px #E20200,
+    inset 0px -1px 0px rgba(2, 0, 0, 0.1),
+    inset 4px -2px 5px rgba(216, 2, 0, 0.4);
+  --glass-shadow-hover:
+    0px 21px 11.2px -19px #FFC002,
+    0px 1px 0px 1px #F31800,
+    inset -3px 3px 5.2px 2px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.5px 0.5px #EE8331,
+    inset 0px 0px 4px #E20200,
+    inset 0px -1px 0px rgba(2, 0, 0, 0.1),
+    inset 4px -2px 5px rgba(216, 2, 0, 0.4);
+  --glass-shadow-pressed:
+    0px 21px 11.2px -19px #FFC002,
+    0px 1px 0px 1px #310D0C,
+    inset -3px 3px 5.2px 2px rgba(0, 0, 0, 0.4),
+    inset 0px 0px 4px #E20200,
+    inset 0px -1px 0px rgba(2, 0, 0, 0.1),
+    inset 4px -2px 5px rgba(216, 2, 0, 0.4);
+
+  /* Тёмная (выключенная) плашка кнопки */
+  --plate-off: linear-gradient(180deg, #191919 0%, #161616 100%);
+  --plate-off-shadow: 0px 1px 0px 1px #101010,
+    inset 0px 0.5px 0px 1px #26282A;
+  --plate-off-hover: linear-gradient(180deg, #383838 0%, #191919 100%);
+  --plate-off-hover-shadow: 0px -1px 0px 1px #101010,
+    inset 0px -0.5px 0px 1px #26282A;
+
+  /* Свечение под кнопкой */
+  --glow-base: #201312;
+  --glow-red-line: inset 0px -5px 0px #FF0000;
+  --glow-red-line-dim: inset 0px -5px 0px rgba(255, 0, 0, 0.2);
+  --glow-grad-70: linear-gradient(360deg,
+    rgba(255, 145, 0, 0.7) 23.1%, rgba(247, 2, 39, 0.7) 48.56%,
+    rgba(167, 24, 15, 0.7) 81.45%);
+  --glow-grad-100: linear-gradient(360deg,
+    #FF9100 23.1%, #F70227 48.56%, #A7180F 81.45%);
+  --glow-grad-30: linear-gradient(360deg,
+    rgba(255, 145, 0, 0.3) 18.32%, rgba(247, 2, 39, 0.3) 38.51%,
+    rgba(167, 24, 15, 0.3) 64.6%);
+  --glow-ellipse-70: linear-gradient(90deg,
+    rgba(255, 145, 0, 0.7) 6.76%, rgba(167, 24, 15, 0.7) 96.4%);
+  --glow-ellipse-20: linear-gradient(90deg,
+    rgba(255, 145, 0, 0.2) 6.76%, rgba(167, 24, 15, 0.2) 96.4%);
+  --glow-orange: #FF8400;
+  --icon-glow-hover:
+    0px 0px 5.6px rgba(244, 146, 17, 0.5),
+    0px 0px 5px rgba(244, 119, 17, 0.5),
+    0px 0px 6px rgba(244, 100, 17, 0.5);
+
+  /* ---------- Поля ввода (input field.css) ---------- */
+  --field-bg: rgba(38, 38, 38, 0.2);
+  --field-border-pressed: rgba(112, 112, 112, 0.3);
+  --field-border-disabled: rgba(112, 112, 112, 0.1);
+  --field-shadow-hover: 0px 0px 0px 3px rgba(112, 112, 112, 0.03);
+
+  /* ---------- Радиусы и размеры ---------- */
+  --r-screen: 20px;
+  --r-card: 15px;
+  --r-btn: 10px;
+  --r-pill: 100px;
+  --r-glass: 8px;
+  --r-small: 5px;
+  --r-check: 3px;
+
+  --h-field: 36px;
+  --h-btn: 44px;
+  --h-row: 70px;
+  --h-switch: 18px;
+  --w-switch: 36px;
+}
+
+/* ---------- Базовый сброс ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  outline: 0;
+}
+
+/* ---------- Полосы прокрутки в стиле Figma ---------- */
+.rs-scroll { overflow-y: auto; scrollbar-gutter: stable; }
+
+.rs-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+
+.rs-scroll::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+  border-radius: var(--r-pill);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.rs-scroll::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: var(--r-pill);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.rs-scroll::-webkit-scrollbar-corner { background: transparent; }
