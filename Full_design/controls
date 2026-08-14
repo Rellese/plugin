@@ -1,0 +1,206 @@
+/* controls */
+
+box-sizing: border-box;
+
+position: relative;
+width: 105px;
+height: 80px;
+
+border: 1px dashed #9747FF;
+border-radius: 5px;
+
+
+/* State=Off, Status=Плэй */
+
+position: absolute;
+width: 15px;
+height: 15px;
+left: 45px;
+top: 45px;
+
+
+
+/* Icon */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: radial-gradient(95.47% 100% at 50% 100%, rgba(109, 109, 109, 0.5) 0%, rgba(109, 109, 109, 0.1) 100%);
+
+
+/* State=Off, Status=Стоп */
+
+position: absolute;
+width: 15px;
+height: 15px;
+left: 70px;
+top: 45px;
+
+
+
+/* Icon */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: radial-gradient(95.47% 100% at 50% 100%, rgba(109, 109, 109, 0.5) 0%, rgba(109, 109, 109, 0.1) 100%);
+border-radius: 3px;
+
+
+/* State=Off, Status=Пауза */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 3px;
+
+position: absolute;
+width: 15px;
+height: 15px;
+left: 20px;
+top: 45px;
+
+
+
+/* Icon 1 */
+
+box-sizing: border-box;
+
+width: 6px;
+height: 15px;
+
+background: radial-gradient(95.47% 100% at 50% 100%, rgba(109, 109, 109, 0.5) 0%, rgba(109, 109, 109, 0.1) 100%);
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon 2 */
+
+box-sizing: border-box;
+
+width: 6px;
+height: 15px;
+
+background: radial-gradient(95.47% 100% at 50% 100%, rgba(109, 109, 109, 0.5) 0%, rgba(109, 109, 109, 0.1) 100%);
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* State=On, Status=Плэй */
+
+position: absolute;
+width: 15px;
+height: 15px;
+left: 45px;
+top: 20px;
+
+
+
+/* Icon */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: radial-gradient(62.92% 65.91% at 50% 0%, #6D6D6D 0%, rgba(109, 109, 109, 0.2) 64.39%, rgba(109, 109, 109, 0) 100%), radial-gradient(60.89% 100% at 50% 0%, #3B3B3B 16.64%, #222222 90.26%, #222222 100%), #D9D9D9;
+border: 1px solid rgba(180, 180, 180, 0.5);
+
+
+/* State=On, Status=Стоп */
+
+position: absolute;
+width: 15px;
+height: 15px;
+left: 70px;
+top: 20px;
+
+
+
+/* Icon */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: radial-gradient(62.92% 65.91% at 50% 0%, #6D6D6D 0%, rgba(109, 109, 109, 0.2) 64.39%, rgba(109, 109, 109, 0) 100%), radial-gradient(60.89% 100% at 50% 0%, #3B3B3B 16.64%, #222222 90.26%, #222222 100%);
+border: 1px solid rgba(180, 180, 180, 0.5);
+border-radius: 3px;
+
+
+/* State=On, Status=Пауза */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 3px;
+
+position: absolute;
+width: 15px;
+height: 15px;
+left: 20px;
+top: 20px;
+
+
+
+/* Icon 1 */
+
+box-sizing: border-box;
+
+width: 6px;
+height: 15px;
+
+background: radial-gradient(62.92% 65.91% at 50% 0%, #6D6D6D 0%, rgba(109, 109, 109, 0.2) 64.39%, rgba(109, 109, 109, 0) 100%), radial-gradient(60.89% 100% at 50% 0%, #3B3B3B 16.64%, #222222 90.26%, #222222 100%), #D9D9D9;
+border: 1px solid rgba(180, 180, 180, 0.5);
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon 2 */
+
+box-sizing: border-box;
+
+width: 6px;
+height: 15px;
+
+background: radial-gradient(62.92% 65.91% at 50% 0%, #6D6D6D 0%, rgba(109, 109, 109, 0.2) 64.39%, rgba(109, 109, 109, 0) 100%), radial-gradient(60.89% 100% at 50% 0%, #3B3B3B 16.64%, #222222 90.26%, #222222 100%), #D9D9D9;
+border: 1px solid rgba(180, 180, 180, 0.5);
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;

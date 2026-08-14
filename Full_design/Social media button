@@ -1,0 +1,899 @@
+/* Social media button */
+
+box-sizing: border-box;
+
+position: relative;
+width: 306px;
+height: 76px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+
+/* State=On, Status=Pressed */
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 250px;
+top: 20px;
+
+
+
+/* Glow along the edges */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 2.78%;
+
+background: #201312;
+box-shadow: inset 0px -5px 0px rgba(255, 0, 0, 0.2);
+border-radius: 10px;
+
+
+/* Down Glow 2 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 33.33%;
+bottom: 0%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.3) 18.32%, rgba(247, 2, 39, 0.3) 38.51%, rgba(167, 24, 15, 0.3) 64.6%);
+
+
+/* Center Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 36.11%;
+bottom: 8.33%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.7) 23.1%, rgba(247, 2, 39, 0.7) 48.56%, rgba(167, 24, 15, 0.7) 81.45%);
+border-radius: 25px;
+
+
+/* Upper Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 25%;
+top: 2.78%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.7) 6.76%, rgba(167, 24, 15, 0.7) 96.4%);
+
+
+/* Upper Glow 2 */
+
+position: absolute;
+left: 5.56%;
+right: 58.33%;
+top: 8.33%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.2) 6.76%, rgba(167, 24, 15, 0.2) 96.4%);
+
+
+/* Down Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 75%;
+bottom: 8.33%;
+
+background: #FF8400;
+border-radius: 25px;
+
+
+/* Contain */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 1px 2px;
+gap: 10px;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 34px;
+height: 34px;
+
+background: radial-gradient(40.16% 76.19% at 84.07% 7.14%, rgba(226, 22, 22, 0.22) 0%, rgba(226, 22, 22, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(66.12% 53.97% at 9.84% 25.24%, rgba(238, 131, 49, 0.21) 4.19%, rgba(238, 81, 49, 0.21) 23.46%, rgba(238, 81, 49, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(22, 22, 22, 0.1);
+box-shadow: 0px 21px 11.2px -19px #FFC002, 0px 1px 0px 1px #310D0C, inset -3px 3px 5.2px 2px rgba(0, 0, 0, 0.4), inset 0px 0px 4px #E20200, inset 0px -1px 0px rgba(2, 0, 0, 0.1), inset 4px -2px 5px rgba(216, 2, 0, 0.4);
+backdrop-filter: blur(2px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon Соц сети  */
+
+width: 20px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: linear-gradient(0deg, rgba(253, 241, 229, 0.4), rgba(253, 241, 229, 0.4)), #FDF1E5;
+background-blend-mode: overlay;
+
+
+/* State=On, Status=Hovered */
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 204px;
+top: 20px;
+
+
+
+/* Glow along the edges */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 2.78%;
+
+background: #201312;
+box-shadow: inset 0px -5px 0px #FF0000;
+border-radius: 10px;
+
+
+/* Down Glow 2 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 33.33%;
+bottom: 0%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.7) 18.32%, rgba(247, 2, 39, 0.7) 38.51%, rgba(167, 24, 15, 0.7) 64.6%);
+
+
+/* Center Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 36.11%;
+bottom: 8.33%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.7) 23.1%, rgba(247, 2, 39, 0.7) 48.56%, rgba(167, 24, 15, 0.7) 81.45%);
+border-radius: 25px;
+
+
+/* Upper Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 25%;
+top: 2.78%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.7) 6.76%, rgba(167, 24, 15, 0.7) 96.4%);
+
+
+/* Upper Glow 2 */
+
+position: absolute;
+left: 5.56%;
+right: 58.33%;
+top: 8.33%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.2) 6.76%, rgba(167, 24, 15, 0.2) 96.4%);
+
+
+/* Down Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 75%;
+bottom: 8.33%;
+
+background: #FF8400;
+border-radius: 25px;
+
+
+/* Contain */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 1px 2px;
+gap: 10px;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 34px;
+height: 34px;
+
+background: radial-gradient(40.16% 76.19% at 84.07% 7.14%, rgba(226, 22, 22, 0.22) 0%, rgba(226, 22, 22, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(66.12% 53.97% at 9.84% 25.24%, rgba(238, 131, 49, 0.21) 4.19%, rgba(238, 81, 49, 0.21) 23.46%, rgba(238, 81, 49, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(22, 22, 22, 0.1);
+box-shadow: 0px 21px 11.2px -19px #FFC002, 0px 1px 0px 1px #F31800, inset -3px 3px 5.2px 2px rgba(0, 0, 0, 0.4), inset 0.5px 0.5px 0.5px #EE8331, inset 0px 0px 4px #E20200, inset 0px -1px 0px rgba(2, 0, 0, 0.1), inset 4px -2px 5px rgba(216, 2, 0, 0.4);
+backdrop-filter: blur(2px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon Соц сети  */
+
+width: 20px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 0px 5.6px rgba(244, 146, 17, 0.5), 0px 0px 5px rgba(244, 119, 17, 0.5), 0px 0px 6px rgba(244, 100, 17, 0.5);
+
+
+/* State=On, Status=Enable */
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 158px;
+top: 20px;
+
+
+
+/* Glow along the edges */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #201312;
+box-shadow: inset 0px -5px 0px #FF0000;
+border-radius: 9px;
+
+
+/* Down Glow 2 */
+
+position: absolute;
+visibility: hidden;
+left: 0%;
+right: 0%;
+top: 33.33%;
+bottom: 0%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.7) 18.32%, rgba(247, 2, 39, 0.7) 38.51%, rgba(167, 24, 15, 0.7) 64.6%);
+
+
+/* Center Glow */
+
+position: absolute;
+left: 5.56%;
+right: 5.56%;
+top: 36.11%;
+bottom: 8.33%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.7) 23.1%, rgba(247, 2, 39, 0.7) 48.56%, rgba(167, 24, 15, 0.7) 81.45%);
+border-radius: 25px;
+
+
+/* Upper Glow */
+
+position: absolute;
+left: 5.56%;
+right: 25%;
+top: 2.78%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.7) 6.76%, rgba(167, 24, 15, 0.7) 96.4%);
+
+
+/* Upper Glow 2 */
+
+position: absolute;
+left: 5.56%;
+right: 58.33%;
+top: 8.33%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.2) 6.76%, rgba(167, 24, 15, 0.2) 96.4%);
+
+
+/* Down Glow */
+
+position: absolute;
+left: 5.56%;
+right: 5.56%;
+top: 75%;
+bottom: 8.33%;
+
+background: #FF8400;
+border-radius: 25px;
+
+
+/* Contain */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 1px 2px;
+gap: 10px;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 34px;
+height: 34px;
+
+background: radial-gradient(40.16% 76.19% at 84.07% 7.14%, rgba(226, 22, 22, 0.22) 0%, rgba(226, 22, 22, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(66.12% 53.97% at 9.84% 25.24%, rgba(238, 131, 49, 0.21) 4.19%, rgba(238, 81, 49, 0.21) 23.46%, rgba(238, 81, 49, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(22, 22, 22, 0.1);
+box-shadow: 0px 1px 0px 1px #5B0B02, inset -3px 3px 5.2px 2px rgba(0, 0, 0, 0.4), inset 0.5px 0.5px 0.5px #EE8331, inset 0px 0px 4px #E20200, inset 0px -1px 0px rgba(2, 0, 0, 0.1), inset 4px -2px 5px rgba(216, 2, 0, 0.4);
+backdrop-filter: blur(4px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon Соц сети  */
+
+width: 20px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+
+
+/* State=Off, Status=Pressed */
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 112px;
+top: 21px;
+
+
+
+/* Glow along the edges */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 2.78%;
+
+background: #201312;
+box-shadow: inset 0px -5px 0px rgba(255, 0, 0, 0.2);
+border-radius: 10px;
+
+
+/* Down Glow 3 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 33.33%;
+bottom: 0%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.3) 18.32%, rgba(247, 2, 39, 0.3) 38.51%, rgba(167, 24, 15, 0.3) 64.6%);
+
+
+/* Center Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 36.11%;
+bottom: 8.33%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.7) 23.1%, rgba(247, 2, 39, 0.7) 48.56%, rgba(167, 24, 15, 0.7) 81.45%);
+border-radius: 25px;
+
+
+/* Upper Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 25%;
+top: 2.78%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.7) 6.76%, rgba(167, 24, 15, 0.7) 96.4%);
+
+
+/* Upper Glow 3 */
+
+position: absolute;
+left: 5.56%;
+right: 58.33%;
+top: 8.33%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.2) 6.76%, rgba(167, 24, 15, 0.2) 96.4%);
+
+
+/* Down Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 75%;
+bottom: 8.33%;
+
+background: #FF8400;
+border-radius: 25px;
+
+
+/* Contain */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 2px 1px 0px;
+gap: 10px;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 34px;
+height: 34px;
+
+background: radial-gradient(40.16% 76.19% at 84.07% 7.14%, rgba(226, 22, 22, 0.22) 0%, rgba(226, 22, 22, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(66.12% 53.97% at 9.84% 25.24%, rgba(238, 131, 49, 0.21) 4.19%, rgba(238, 81, 49, 0.21) 23.46%, rgba(238, 81, 49, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(22, 22, 22, 0.1);
+box-shadow: 0px 21px 11.2px -19px #FFC002, 0px 1px 0px 1px #310D0C, inset -3px 3px 5.2px 2px rgba(0, 0, 0, 0.4), inset 0px 0px 4px #E20200, inset 0px -1px 0px rgba(2, 0, 0, 0.1), inset 4px -2px 5px rgba(216, 2, 0, 0.4);
+backdrop-filter: blur(2px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon Соц сети  */
+
+width: 20px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: linear-gradient(0deg, rgba(253, 241, 229, 0.4), rgba(253, 241, 229, 0.4)), #FDF1E5;
+background-blend-mode: overlay;
+
+
+/* State=Off, Status=Hovered */
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 66px;
+top: 20px;
+
+
+
+/* Glow along the edges */
+
+position: absolute;
+visibility: hidden;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 2.78%;
+
+background: #201312;
+border-radius: 10px;
+
+
+/* Down Glow 3 */
+
+position: absolute;
+visibility: hidden;
+left: 0%;
+right: 0%;
+top: 33.33%;
+bottom: 0%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.3) 18.32%, rgba(247, 2, 39, 0.3) 38.51%, rgba(167, 24, 15, 0.3) 64.6%);
+
+
+/* Center Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 36.11%;
+bottom: 8.33%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.7) 23.1%, rgba(247, 2, 39, 0.7) 48.56%, rgba(167, 24, 15, 0.7) 81.45%);
+border-radius: 25px;
+
+
+/* Upper Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 25%;
+top: 2.78%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.7) 6.76%, rgba(167, 24, 15, 0.7) 96.4%);
+
+
+/* Upper Glow 3 */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 58.33%;
+top: 8.33%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.2) 6.76%, rgba(167, 24, 15, 0.2) 96.4%);
+
+
+/* Down Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 75%;
+bottom: 8.33%;
+
+background: #FF8400;
+border-radius: 25px;
+
+
+/* Contain */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 2px 1px 0px;
+gap: 10px;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 34px;
+height: 34px;
+
+background: linear-gradient(180deg, #383838 0%, #191919 100%);
+box-shadow: 0px -1px 0px 1px #101010, inset 0px -0.5px 0px 1px #26282A;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon Соц сети  */
+
+width: 20px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #707070;
+
+
+/* State=Off, Status=Enable */
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 20px;
+top: 20px;
+
+
+
+/* Glow along the edges */
+
+position: absolute;
+visibility: hidden;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 2.78%;
+
+background: #201312;
+border-radius: 10px;
+
+
+/* Down Glow 3 */
+
+position: absolute;
+visibility: hidden;
+left: 0%;
+right: 0%;
+top: 33.33%;
+bottom: 0%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.3) 18.32%, rgba(247, 2, 39, 0.3) 38.51%, rgba(167, 24, 15, 0.3) 64.6%);
+
+
+/* Center Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 36.11%;
+bottom: 8.33%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.7) 23.1%, rgba(247, 2, 39, 0.7) 48.56%, rgba(167, 24, 15, 0.7) 81.45%);
+border-radius: 25px;
+
+
+/* Upper Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 25%;
+top: 2.78%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.7) 6.76%, rgba(167, 24, 15, 0.7) 96.4%);
+
+
+/* Upper Glow 3 */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 58.33%;
+top: 8.33%;
+bottom: 72.22%;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.2) 6.76%, rgba(167, 24, 15, 0.2) 96.4%);
+
+
+/* Down Glow */
+
+position: absolute;
+visibility: hidden;
+left: 5.56%;
+right: 5.56%;
+top: 75%;
+bottom: 8.33%;
+
+background: #FF8400;
+border-radius: 25px;
+
+
+/* Contain */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 1px 2px;
+gap: 10px;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 34px;
+height: 34px;
+
+background: linear-gradient(180deg, #191919 0%, #161616 100%);
+box-shadow: 0px 1px 0px 1px #101010, inset 0px 0.5px 0px 1px #26282A;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon Соц сети  */
+
+width: 20px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #707070;

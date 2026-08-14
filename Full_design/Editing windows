@@ -1,0 +1,87 @@
+/* Editing Windows */
+
+position: absolute;
+width: 873px;
+height: 796px;
+left: 421px;
+top: 174px;
+
+
+
+/* Editing Blocks */
+
+position: absolute;
+width: 5px;
+height: 796px;
+left: 433px;
+bottom: 30px;
+
+background: rgba(211, 82, 45, 0.5);
+mix-blend-mode: plus-lighter;
+border-radius: 100px;
+
+
+/* Mouse editing */
+
+position: absolute;
+width: 29px;
+height: 17px;
+left: 421px;
+top: 861px;
+
+
+
+/* Right icon */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 11.8px;
+height: 10.75px;
+left: 439.25px;
+top: 863.6px;
+
+background: radial-gradient(62.92% 65.91% at 50% 0%, #6D6D6D 0%, rgba(109, 109, 109, 0.2) 64.39%, rgba(109, 109, 109, 0) 100%), radial-gradient(60.89% 100% at 50% 0%, #3B3B3B 16.64%, #222222 90.26%, #222222 100%);
+border: 1px solid rgba(180, 180, 180, 0.5);
+transform: rotate(90deg);
+
+
+/* Central icon */
+
+position: absolute;
+width: 17px;
+height: 2px;
+left: 434.5px;
+top: 861px;
+
+background: linear-gradient(0deg, #4A4A4D, #4A4A4D), #D9D9D9;
+border: 1px solid rgba(180, 180, 180, 0.5);
+border-radius: 50px;
+transform: matrix(0, 1, 1, 0, 0, 0);
+
+
+/* Left icon */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 11.8px;
+height: 10.75px;
+left: 421px;
+top: 863.6px;
+
+background: radial-gradient(62.92% 65.91% at 50% 0%, #6D6D6D 0%, rgba(109, 109, 109, 0.2) 64.39%, rgba(109, 109, 109, 0) 100%), radial-gradient(60.89% 100% at 50% 0%, #3B3B3B 16.64%, #222222 90.26%, #222222 100%);
+border: 1px solid rgba(180, 180, 180, 0.5);
+transform: matrix(0, 1, 1, 0, 0, 0);
+
+
+/* Editing Columns */
+
+position: absolute;
+width: 1px;
+height: 368px;
+left: 1293px;
+top: 323px;
+
+background: rgba(211, 82, 45, 0.25);
+border-radius: 100px;

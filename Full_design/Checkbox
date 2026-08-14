@@ -1,0 +1,343 @@
+/* Checkbox */
+
+box-sizing: border-box;
+
+position: relative;
+width: 96px;
+height: 96px;
+
+border: 1px dashed #9747FF;
+border-radius: 5px;
+
+
+/* State=Interminate, Status=Pressed */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 12px;
+height: 12px;
+left: 64px;
+top: 64px;
+
+background: rgba(232, 89, 53, 0.3);
+border: 1px solid rgba(232, 89, 53, 0.5);
+box-shadow: 0px 0px 0px 2px rgba(232, 89, 53, 0.15);
+border-radius: 3px;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+opacity: 0;
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* State=Interminate, Status=Hovered */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 12px;
+height: 12px;
+left: 42px;
+top: 64px;
+
+background: rgba(232, 89, 53, 0.3);
+border: 1px solid #E85935;
+box-shadow: 0px 0px 0px 2px rgba(232, 89, 53, 0.15);
+border-radius: 3px;
+
+
+/* Vector 2 */
+
+width: 6px;
+height: 0px;
+
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* State=Interminate, Status=Enable */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 12px;
+height: 12px;
+left: 20px;
+top: 64px;
+
+background: rgba(232, 89, 53, 0.1);
+border: 1px solid #E85935;
+border-radius: 3px;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 0px;
+
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* State=On, Status=Pressed */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 12px;
+height: 12px;
+left: 64px;
+top: 42px;
+
+background: rgba(232, 89, 53, 0.3);
+border: 1px solid rgba(232, 89, 53, 0.5);
+box-shadow: 0px 0px 0px 2px rgba(232, 89, 53, 0.15);
+border-radius: 3px;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+opacity: 0;
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* State=On, Status=Hovered */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 12px;
+height: 12px;
+left: 42px;
+top: 42px;
+
+background: rgba(232, 89, 53, 0.3);
+border: 1px solid #E85935;
+box-shadow: 0px 0px 0px 2px rgba(232, 89, 53, 0.15);
+border-radius: 3px;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* State=On, Status=Enable */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 12px;
+height: 12px;
+left: 20px;
+top: 42px;
+
+background: rgba(232, 89, 53, 0.1);
+border: 1px solid #E85935;
+border-radius: 3px;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* State=Off, Status=Pressed */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 12px;
+height: 12px;
+left: 64px;
+top: 20px;
+
+background: rgba(112, 112, 112, 0.2);
+border: 1px solid #707070;
+box-shadow: 0px 0px 0px 2px rgba(112, 112, 112, 0.15);
+border-radius: 3px;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+border: 1px solid #707070;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* State=Off, Status=Hovered */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 12px;
+height: 12px;
+left: 42px;
+top: 20px;
+
+background: rgba(112, 112, 112, 0.3);
+border: 1px solid rgba(112, 112, 112, 0.5);
+box-shadow: 0px 0px 0px 2px rgba(112, 112, 112, 0.15);
+border-radius: 3px;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+opacity: 0;
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* State=Off, Status=Enable */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 12px;
+height: 12px;
+left: 20px;
+top: 20px;
+
+background: rgba(112, 112, 112, 0.3);
+border-radius: 3px;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+opacity: 0;
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;

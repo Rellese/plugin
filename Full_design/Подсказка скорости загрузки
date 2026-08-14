@@ -1,0 +1,39 @@
+/* Подсказка скорости загрузки */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px 15px;
+gap: 10px;
+
+position: relative;
+width: 300px;
+height: 80px;
+
+background: #1E1E1E;
+border: 1px solid rgba(112, 112, 112, 0.1);
+border-radius: 10px;
+
+
+/* Влияет на скорость поиска и скачивания файлов. При количестве >1000 файлов рекомендуется выбирать безопасный режим иначе есть шанс срабатывания защиты от спама */
+
+width: 270px;
+height: 60px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 15px;
+
+color: #707070;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;

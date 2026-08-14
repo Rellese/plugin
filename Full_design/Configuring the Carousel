@@ -1,0 +1,1206 @@
+/* Configuring the Carousel */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 20px;
+gap: 16px;
+
+position: relative;
+width: 576px;
+height: 352px;
+
+background: #161616;
+border: 1px solid #212121;
+border-radius: 15px;
+
+
+/* Title of the Publication */
+
+width: 534px;
+height: 16px;
+
+font-family: 'IBM Plex Mono';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height */
+letter-spacing: 0.1em;
+
+color: #707070;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Button setting */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 534px;
+height: 30px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Второстепеная кнопка */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 7px 15px;
+gap: 10px;
+
+width: 122px;
+height: 30px;
+
+border: 0.5px solid #B4B4B4;
+border-radius: 100px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Очистить список */
+
+width: 92px;
+height: 16px;
+
+font-family: 'IBM Plex Mono';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height */
+letter-spacing: 0.1em;
+text-transform: uppercase;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Второстепеная кнопка */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 7px 15px;
+gap: 10px;
+
+width: 105px;
+height: 30px;
+
+border: 0.5px solid #B4B4B4;
+border-radius: 100px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Очистить список */
+
+width: 75px;
+height: 16px;
+
+font-family: 'IBM Plex Mono';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height */
+letter-spacing: 0.1em;
+text-transform: uppercase;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Второстепеная кнопка */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 7px 15px;
+gap: 10px;
+
+width: 164px;
+height: 30px;
+
+border: 0.5px solid #B4B4B4;
+border-radius: 100px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Очистить список */
+
+width: 134px;
+height: 16px;
+
+font-family: 'IBM Plex Mono';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height */
+letter-spacing: 0.1em;
+text-transform: uppercase;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Второстепеная кнопка */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 7px 15px;
+gap: 10px;
+
+width: 113px;
+height: 30px;
+
+border: 0.5px solid #B4B4B4;
+border-radius: 100px;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Очистить список */
+
+width: 83px;
+height: 16px;
+
+font-family: 'IBM Plex Mono';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height */
+letter-spacing: 0.1em;
+text-transform: uppercase;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Publications */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+padding: 10px 15px;
+gap: 343px;
+
+width: 534px;
+height: 140px;
+
+background: #1A1A1A;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Publications */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 200px;
+height: 144px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 1 file */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 200px;
+height: 12px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Checkbox */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 12px;
+height: 12px;
+
+background: rgba(232, 89, 53, 0.1);
+border: 1px solid #E85935;
+border-radius: 3px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Format */
+
+width: 145px;
+height: 12px;
+
+font-family: 'CommitMono';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 12px;
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* 2 file */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 200px;
+height: 12px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Checkbox */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 12px;
+height: 12px;
+
+background: rgba(232, 89, 53, 0.1);
+border: 1px solid #E85935;
+border-radius: 3px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Format */
+
+width: 145px;
+height: 12px;
+
+font-family: 'CommitMono';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 12px;
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* 3 file */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 200px;
+height: 12px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Checkbox */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 12px;
+height: 12px;
+
+background: rgba(112, 112, 112, 0.3);
+border-radius: 3px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+opacity: 0;
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Format */
+
+width: 145px;
+height: 12px;
+
+font-family: 'CommitMono';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 12px;
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* 4 file */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 200px;
+height: 12px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Checkbox */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 12px;
+height: 12px;
+
+background: rgba(232, 89, 53, 0.1);
+border: 1px solid #E85935;
+border-radius: 3px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Format */
+
+width: 145px;
+height: 12px;
+
+font-family: 'CommitMono';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 12px;
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* 5 file */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 200px;
+height: 12px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Checkbox */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 12px;
+height: 12px;
+
+background: rgba(112, 112, 112, 0.3);
+border-radius: 3px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+opacity: 0;
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Format */
+
+width: 145px;
+height: 12px;
+
+font-family: 'CommitMono';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 12px;
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* 6 file */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 200px;
+height: 12px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Checkbox */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 12px;
+height: 12px;
+
+background: rgba(112, 112, 112, 0.3);
+border-radius: 3px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+opacity: 0;
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Format */
+
+width: 145px;
+height: 12px;
+
+font-family: 'CommitMono';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 12px;
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* 7 file */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 200px;
+height: 12px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Checkbox */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 12px;
+height: 12px;
+
+background: rgba(112, 112, 112, 0.3);
+border-radius: 3px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+opacity: 0;
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Format */
+
+width: 145px;
+height: 12px;
+
+font-family: 'CommitMono';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 12px;
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Скролл */
+
+width: 4px;
+height: 120px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Общая полоска */
+
+position: absolute;
+width: 4px;
+height: 120px;
+left: 515px;
+top: 10px;
+
+background: rgba(49, 49, 49, 0.3);
+border-radius: 100px;
+
+
+/* Сам скролл */
+
+position: absolute;
+width: 4px;
+height: 105.48px;
+left: 515px;
+top: 10px;
+
+background: #313131;
+border-radius: 100px;
+
+
+/* Selected items and thumbnails */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+padding: 0px;
+gap: 16px;
+
+width: 534px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Number of selections */
+
+width: 184px;
+height: 16px;
+
+font-family: 'IBM Plex Mono';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height */
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Thumbnails */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+width: 98px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Checkbox */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 12px;
+height: 12px;
+
+background: rgba(112, 112, 112, 0.3);
+border-radius: 3px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector 1 */
+
+width: 6px;
+height: 4px;
+
+opacity: 0;
+border: 1px solid #E85935;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Text */
+
+width: 78px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+width: 534px;
+height: 44px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Simple button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 267px;
+height: 44px;
+
+background: linear-gradient(180deg, #191919 0%, #161616 100%);
+box-shadow: inset 0px 0.5px 0px 1px #26282A;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* Показать технический журнал */
+
+width: 59px;
+height: 19px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 19px;
+letter-spacing: 0.1em;
+
+color: #B4B4B4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Search button */
+
+width: 247px;
+height: 44px;
+
+border-radius: 11px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 1;
+
+
+/* Red down */
+
+position: absolute;
+width: 364px;
+height: 42px;
+left: 1px;
+top: 0px;
+
+background: #201312;
+box-shadow: inset 0px -5px 0px #FF0000;
+border-radius: 10px;
+
+
+/* red around the edges */
+
+position: absolute;
+visibility: hidden;
+left: 0%;
+right: 0%;
+top: 31.82%;
+bottom: 2.27%;
+
+background: linear-gradient(360deg, rgba(255, 145, 0, 0.7) 18.32%, rgba(247, 2, 39, 0.7) 38.51%, rgba(167, 24, 15, 0.7) 64.6%);
+border-radius: 25px;
+
+
+/* Red center */
+
+position: absolute;
+left: 6.56%;
+right: 6.56%;
+top: 45.45%;
+bottom: 2.27%;
+
+background: linear-gradient(360deg, #FF9100 22.2%, #F70227 46.66%, #A7180F 78.26%);
+border-radius: 25px;
+
+
+/* yellow down */
+
+position: absolute;
+left: 6.83%;
+right: 6.83%;
+top: 72.73%;
+bottom: 2.27%;
+
+background: #FF8400;
+border-radius: 25px;
+
+
+/* light left corner */
+
+position: absolute;
+width: 130px;
+height: 11px;
+left: 3px;
+top: 1px;
+
+background: linear-gradient(90deg, rgba(255, 145, 0, 0.7) 6.76%, rgba(167, 24, 15, 0.7) 96.4%);
+
+
+/* Контейнер */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 1px 2px;
+gap: 10px;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Кнопка */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 245px;
+height: 42px;
+
+background: radial-gradient(40.16% 76.19% at 84.07% 7.14%, rgba(226, 22, 22, 0.22) 0%, rgba(226, 22, 22, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(66.12% 53.97% at 9.84% 25.24%, rgba(238, 131, 49, 0.21) 4.19%, rgba(238, 81, 49, 0.21) 23.46%, rgba(238, 81, 49, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(22, 22, 22, 0.1);
+box-shadow: 0px 1px 0px 1px #5B0B02, inset -3px 3px 5.2px 2px rgba(0, 0, 0, 0.4), inset 0.5px 0.5px 0.5px #EE8331, inset 0px 0px 4px #E20200, inset 0px -1px 0px rgba(2, 0, 0, 0.1), inset 4px -2px 5px rgba(216, 2, 0, 0.4);
+backdrop-filter: blur(7.5px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Текст */
+
+width: 21px;
+height: 19px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 19px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+
+color: #FDF1E5;
+
+text-shadow: 0px 0px 10px #F46411;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;

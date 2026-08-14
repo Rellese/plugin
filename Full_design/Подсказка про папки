@@ -1,0 +1,61 @@
+/* Подсказка про папки */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px 15px;
+gap: 10px;
+
+position: relative;
+width: 300px;
+height: 180px;
+
+background: #1E1E1E;
+border: 1px solid rgba(112, 112, 112, 0.1);
+border-radius: 10px;
+
+
+/* При включении этого режима ReferenceSync сначала даст список доступных досок, коллекций и разделов. */
+
+width: 270px;
+height: 45px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 15px;
+
+color: #D3522D;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Выберите нужные коллекции и нажмите "Продолжить". После этого выбранный режим поиска будет применён только к содержимому отмеченных коллекций. Если режим выключен, поиск выполняется по общему списку всех сохранённых публикаций. */
+
+width: 270px;
+height: 105px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 15px;
+
+color: #707070;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;

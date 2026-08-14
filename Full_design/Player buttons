@@ -1,0 +1,219 @@
+/* Player buttons */
+
+box-sizing: border-box;
+
+position: relative;
+width: 76px;
+height: 167px;
+
+border: 1px dashed #9747FF;
+border-radius: 5px;
+
+
+/* State=Pressed */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 0px 0px;
+gap: 10px;
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 20px;
+top: 111px;
+
+
+
+/* Button */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 36px;
+height: 36px;
+
+background: #151515;
+box-shadow: inset 0px 2px 0px 1px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* controls */
+
+width: 15px;
+height: 15px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: radial-gradient(95.47% 100% at 50% 100%, rgba(109, 109, 109, 0.5) 0%, rgba(109, 109, 109, 0.1) 100%);
+border-radius: 3px;
+
+
+/* State=Hovered */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px 0px 2px;
+gap: 10px;
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 20px;
+top: 66px;
+
+
+
+/* Button */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 36px;
+height: 36px;
+
+background: rgba(38, 38, 38, 0.8);
+box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* controls */
+
+width: 15px;
+height: 15px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: radial-gradient(62.92% 65.91% at 50% 0%, #6D6D6D 0%, rgba(109, 109, 109, 0.2) 64.39%, rgba(109, 109, 109, 0) 100%), radial-gradient(60.89% 100% at 50% 0%, #3B3B3B 16.64%, #222222 90.26%, #222222 100%);
+border: 1px solid rgba(180, 180, 180, 0.5);
+box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.65);
+border-radius: 3px;
+
+
+/* State=Enable */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 36px;
+height: 36px;
+left: 20px;
+top: 20px;
+
+
+
+/* Button */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 36px;
+height: 36px;
+
+background: rgba(38, 38, 38, 0.2);
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* controls */
+
+width: 15px;
+height: 15px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: radial-gradient(62.92% 65.91% at 50% 0%, #6D6D6D 0%, rgba(109, 109, 109, 0.2) 64.39%, rgba(109, 109, 109, 0) 100%), radial-gradient(60.89% 100% at 50% 0%, #3B3B3B 16.64%, #222222 90.26%, #222222 100%);
+border: 1px solid rgba(180, 180, 180, 0.5);
+border-radius: 3px;
